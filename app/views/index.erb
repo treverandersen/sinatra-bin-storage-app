@@ -1,2 +1,7 @@
 <h1>Bin Storage</h1>
 
+<% if logged_in? %>
+	<p><a href="/logout">Log Out</a></p>
+	<% else %>
+		<p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a></p>
+<% end %>
