@@ -5,7 +5,7 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 require_relative 'app/controllers/users_controller'
-require_relative 'app/controllers/bins_controlelr'
+require_relative 'app/controllers/bins_controller'
 require_relative 'app/controllers/loads_controller'
 
 use Rack::MethodOverride
