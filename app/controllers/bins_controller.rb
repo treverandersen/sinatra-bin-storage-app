@@ -9,4 +9,12 @@ class BinsController < ApplicationController
 		end
 	end
 
+	get '/bins/new' do 
+		if logged_in? 
+			erb :'/bins/new_bin'
+		else
+			redirect "/login"
+		end
+	end
+	
 end
