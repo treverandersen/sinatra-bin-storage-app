@@ -1,0 +1,18 @@
+<h1>Edit Load:</h1>
+
+<form action="/loads/<%=@load.id%>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="PATCH">
+	<label>Driver Name:</label>
+	<input type="text" name="driver_name" value="<%=@load.driver_name%>">
+	<br></br>
+
+	<label>Load-In-Weight:</label>
+	<input type="integer" name="load_in_weight" value="<%=@load.load_in_weight%>">
+	<br></br>
+
+	<label>Load-Out-Weight:</label>
+	<input type="integer" name="load_out_weight" value="<%=@load.load_out_weight%>">
+	<br></br>
+
+	<input type="submit" value="submit">
+</form>
