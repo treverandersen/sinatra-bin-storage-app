@@ -1,0 +1,9 @@
+<h1>Hey, <%= current_user.username %>!</h1>
+<p><a href="/loads/new">Create a new Load</a> or <a href="/logout">Log Out</a></p>
+
+<h4>Here is a list of all your loads:</h4>
+<% @loads.each do |load| %>
+	<p>Driver Name: <%= load.driver_name %>, Load-In-Weight: <%= load.load_in_weight %>, Load-Out-Weight: <%= load.load_out_weight %></p>
+	<a href="/loads/<%=load.id%>/edit">Edit Load</a> <a href="/loads/<%=load.id%>/delete">Delete Load</a>
+	<br></br>
+<% end %>
