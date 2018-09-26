@@ -9,4 +9,12 @@ class LoadsController < ApplicationController
 		end
 	end
 
+	get '/loads/new' do 
+		if logged_in?
+			erb :'/loads/new_load'
+		else
+			redirect "/login"
+		end
+	end
+
 end
