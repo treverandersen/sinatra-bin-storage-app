@@ -1,8 +1,13 @@
-
 <% if logged_in? %>
-	<h1>Bin Storage</h1>
-	<p><a href="/logout">Log Out</a></p>
-	<% else %>
-		<h1>Welcome!</h1>
-		<p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a></p>
+	<h1>Hey, <%= current_user.username %>!</h1>
+	<p><a href="/bins/new">Create a new Bin</a> <a href="/loads/new">Create a new Load</a> or <a href="/logout">Log Out</a></p>
+	<h3>Overview:</h3>
+	<% @bins.each do |bin| %>
+		<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %></p>
+		<a href="/bins/<%=bin.id%>/edit">Edit Bin</a>
+		<br></br>
+	<% end %>
+<% else %>
+	<h1>Welcome!</h1>
+	<p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a></p>
 <% end %>
