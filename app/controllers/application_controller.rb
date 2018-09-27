@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
 
 	get '/' do
 		@bins = Bin.all
+		@loads = Load.all
     erb :index
 	end
 	
