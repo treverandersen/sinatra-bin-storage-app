@@ -1,9 +1,4 @@
-<h1>Hey, <%= current_user.username %>!</h1>
-<p><a href="/bins/new">Create a new Bin</a> or <a href="/logout">Log Out</a></p>
-
 <h4>Here is a list of all your bins:</h4>
 <% @bins.each do |bin| %>
-	<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %></p>
-	<a href="/bins/<%=bin.id%>/edit">Edit Bin</a> <a href="/bins/<%=bin.id%>/delete">Delete Bin</a>
-	<br></br>
+	<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %> <a href="/bins/<%=bin.id%>/edit">Edit Bin</a> <a href="/bins/<%=bin.id%>/delete">Delete Bin</a></p>
 <% end %>

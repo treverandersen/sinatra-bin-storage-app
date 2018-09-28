@@ -13,12 +13,34 @@
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
 
-<body>
+<body class="app">
   <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
-
-  <%= yield %>
+  
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/bins">All Bins</a></li>
+        <li><a href="/loads">All Loads</a></li>
+        <li><a href="/bins/new">New Bin</a></li>
+        <li><a href="/loads/new">New Load</a></li>
+      </ul>
+    </nav>
+    <nav class="app-nav user-nav">
+      <ul>
+        <% if logged_in? %>
+          <li>You're logged in as: <b><%= current_user.username %>!</b> </li>
+          <li> | </li>
+          <li> <a href="/logout">Log Out</a> </li>
+          <% else %>
+          <li> <a href="/login">Log In</a> </li>
+          <li> - or - </li>
+          <li> <a href="/signup">Sign Up</a> </li>
+        <% end %>
+      </ul>
+    </nav>
+    <%= yield %>
 
 </body>
 

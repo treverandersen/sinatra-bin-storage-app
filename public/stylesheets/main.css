@@ -97,10 +97,28 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+    body.app {
+      margin: 0;
+    }
 
+    .app-nav {
+			margin-top: -2px;
+			background-color: #222;
+			color: #FFF;
+		}
 
-
-
+		.app-nav ul {
+			display: inline;
+		}
+		.app-nav li {
+			display: inline;
+		}
+		.app-nav a {
+			color: #FFF;
+		}
+		.user-nav {
+			
+		}
 
 
 

@@ -1,17 +1,25 @@
 <% if logged_in? %>
-	<h1>Hey, <%= current_user.username %>!</h1>
-	<p><a href="/bins/new">Create a new Bin</a> <a href="/loads/new">Create a new Load</a> or <a href="/logout">Log Out</a></p>
 	<h3>Overview:</h3>
 	<% @bins.each do |bin| %>
-		<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %></p>
-
+		<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %> <a href="/bins/<%=bin.id%>/edit">Edit Bin</a></p>
 		<% bin.loads.each do |load| %>
-			<p>Driver Name: <%= load.driver_name %>, Load-In-Weight: <%= load.load_in_weight %>, Load-Out-Weight: <%= load.load_out_weight %></p>
+			<p>Driver Name: <%= load.driver_name %>, Load-In-Weight: <%= load.load_in_weight %>, Load-Out-Weight: <%= load.load_out_weight %> <a href="/loads/<%=load.id%>/edit">Edit Load</a></p>
 		<% end %>
-		<a href="/bins/<%=bin.id%>/edit">Edit Bin</a>
 		<br></br>
 	<% end %>
 <% else %>
-	<h1>Welcome!</h1>
-	<p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a></p>
+	<h1>Sinatra App For Tracking Bin Loads</h1>
+	<ul>
+		<li>Built as an MVC Sinatra application</li>
+		<li>Uses ActiveRecord</li>
+		<li>Uses multiple models</li>
+		<li>Has at least one has_many relationship on a User model, and one belongs_to relationship on another model</li>
+		<li>Users can sign up, sign in, and sign out</li>
+		<li>----</li>
+		<li>Need to validate uniqueness of the user login attribute</li>
+		<li>Need to let user update and delete account</li>
+		<li>Need to validate user input so bad data cannot be persisted to the database</li>
+		<li>Add Bonus: Display validation failures to user with error messages</li>
+		<li>----</li>
+	</ul>
 <% end %>
