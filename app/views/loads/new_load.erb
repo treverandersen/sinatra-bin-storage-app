@@ -13,5 +13,11 @@
 	<input type="integer" name="load_out_weight">
 	<br></br>
 
+	<% Bin.all.each do |bin| %>
+		<label><%= bin.name %></label>
+		<input type="radio" id="bin_<%=bin.id%>" name="bin_id" value="<%=bin.id%>">
+		<br></br>
+	<% end %>
+	
 	<input type="submit" value="submit">
 </form>

@@ -4,7 +4,8 @@
 	<h3>Overview:</h3>
 	<% @bins.each do |bin| %>
 		<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %></p>
-		<% @loads.each do |load| %>
+
+		<% bin.loads.each do |load| %>
 			<p>Driver Name: <%= load.driver_name %>, Load-In-Weight: <%= load.load_in_weight %>, Load-Out-Weight: <%= load.load_out_weight %></p>
 		<% end %>
 		<a href="/bins/<%=bin.id%>/edit">Edit Bin</a>

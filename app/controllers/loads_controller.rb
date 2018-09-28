@@ -19,7 +19,7 @@ class LoadsController < ApplicationController
 
 	post '/loads' do 
 		if logged_in?
-			@load = current_user.loads.build(driver_name: params[:driver_name], load_in_weight: params[:load_in_weight], load_out_weight: params[:load_out_weight])
+			@load = current_user.loads.build(driver_name: params[:driver_name], load_in_weight: params[:load_in_weight], load_out_weight: params[:load_out_weight], bin_id: params[:bin_id])
 			if @load.save
 				redirect "/loads/#{@load.id}"
 			else

@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_155144) do
+ActiveRecord::Schema.define(version: 2018_09_27_182534) do
 
   create_table "bins", force: :cascade do |t|
     t.text "name"
     t.integer "bushel_capacity"
     t.integer "per_cent_full"
     t.integer "user_id"
-    t.integer "load_id"
   end
 
   create_table "loads", force: :cascade do |t|
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_155144) do
     t.integer "load_in_weight"
     t.integer "load_out_weight"
     t.integer "user_id"
+    t.integer "bin_id"
   end
 
   create_table "users", force: :cascade do |t|
