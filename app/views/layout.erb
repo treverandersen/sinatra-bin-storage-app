@@ -20,7 +20,7 @@
   
     <nav class="app-nav">
       <ul>
-        <li><a href="/">Overview</a></li>
+        <li><a href="/dashboard">Overview</a></li>
         <li><a href="/bins">All Bins</a></li>
         <li><a href="/loads">All Loads</a></li>
         <li><a href="/bins/new">New Bin</a></li>
@@ -30,7 +30,7 @@
     <nav class="app-nav user-nav">
       <ul>
         <% if logged_in? %>
-          <li>You're logged in as: <b><%= current_user.username %>!</b> </li>
+          <li>You're logged in as: <b><a href="/users/<%=current_user.id%>"><%= current_user.username %>!</a></b> </li>
           <li> | </li>
           <li> <a href="/logout">Log Out</a> </li>
           <% else %>

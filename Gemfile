@@ -13,6 +13,7 @@ gem 'require_all'
 gem 'pry'
 gem 'tux'
 gem 'bcrypt'
+gem 'sinatra-flash'
 
 group :test do
   gem 'rspec'

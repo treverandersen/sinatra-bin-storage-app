@@ -1,14 +1,4 @@
-<% if logged_in? %>
-	<h3>Overview:</h3>
-	<% @bins.each do |bin| %>
-		<p>Name: <%= bin.name %>, Size: <%= bin.bushel_capacity %> <a href="/bins/<%=bin.id%>/edit">Edit Bin</a></p>
-		<% bin.loads.each do |load| %>
-			<p>Driver Name: <%= load.driver_name %>, Load-In-Weight: <%= load.load_in_weight %>, Load-Out-Weight: <%= load.load_out_weight %> <a href="/loads/<%=load.id%>/edit">Edit Load</a></p>
-		<% end %>
-		<br></br>
-	<% end %>
-<% else %>
-	<h1>Sinatra App For Tracking Bin Loads</h1>
+<h1>Sinatra App For Tracking Bin Loads</h1>
 	<ul>
 		<li>Built as an MVC Sinatra application</li>
 		<li>Uses ActiveRecord</li>
@@ -22,4 +12,3 @@
 		<li>Add Bonus: Display validation failures to user with error messages</li>
 		<li>----</li>
 	</ul>
-<% end %>
