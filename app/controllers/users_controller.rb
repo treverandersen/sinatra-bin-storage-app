@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	
+
 	get '/dashboard' do
 		if logged_in?
 			@bins = Bin.all
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
 	post '/signup' do 
 		if params[:username] == "" || params[:password] == ""
+			flash[:message] = "username and password fields can't be left blank."
 			redirect "/signup"
 		else
 			@user = User.new(:username => params[:username], :password => params[:password])
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
 				flash[:message] = "Successfully created a new user."
 				redirect "/dashboard"
 			else
+				flash[:message] = "username already exists."
 				erb :'/users/create_user'
 			end
 		end
