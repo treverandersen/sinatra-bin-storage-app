@@ -21,6 +21,7 @@ class LoadsController < ApplicationController
 		if logged_in?
 			@load = current_user.loads.build(driver_name: params[:driver_name], load_in_weight: params[:load_in_weight], load_out_weight: params[:load_out_weight], bin_id: params[:bin_id])
 			if @load.save
+				flash[:message] = "Successfully created a new load."
 				redirect "/loads/#{@load.id}"
 			else
 				redirect "/loads/new"
@@ -57,6 +58,7 @@ class LoadsController < ApplicationController
 			@load = Load.find_by_id(params[:id])
 			if @load && @load.user = current_user
 				if @load.update(driver_name: params[:driver_name], load_in_weight: params[:load_in_weight], load_out_weight: params[:load_out_weight])
+					flash[:message] = "Successfully updated load."
 					redirect "/loads/#{@load.id}"
 				else
 					redirect "/loads/#{@load.id}/edit"

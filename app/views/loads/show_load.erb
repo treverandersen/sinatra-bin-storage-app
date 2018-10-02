@@ -1,3 +1,6 @@
+<% if flash.has?(:message) %>
+	<%= flash[:message] %>
+<% end %>
 <h3>This has been posted to your user homepage:</h3>
 <p>Driver Name: <%= @load.driver_name %>, Load-In-Weight: <%= @load.load_in_weight %>, Load-Out-Weight: <%= @load.load_out_weight %></p>
 

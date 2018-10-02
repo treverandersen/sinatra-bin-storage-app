@@ -1,3 +1,6 @@
+<% if flash.has?(:message) %>
+	<%= flash[:message] %>
+<% end %>
 <h3>This has been posted to your user homepage:</h3>
 <p>Bin Name: <%= @bin.name %>, Bin Size: <%= @bin.bushel_capacity %></p>
 

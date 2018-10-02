@@ -21,6 +21,7 @@ class BinsController < ApplicationController
 		if logged_in?
 			@bin = current_user.bins.build(name: params[:name], bushel_capacity: params[:bushel_capacity])
 			if @bin.save
+				flash[:message] = "Successfully created a new bin."
 				redirect "/bins/#{@bin.id}"
 			else
 				redirect "/bins/new"
@@ -57,6 +58,7 @@ class BinsController < ApplicationController
 			@bin = Bin.find_by_id(params[:id])
 			if @bin && @bin.user == current_user
 				if @bin.update(name: params[:name], bushel_capacity: params[:bushel_capacity])
+					flash[:message] = "Successfully udated bin."
 					redirect "/bins/#{@bin.id}"
 				else
 					redirect "/bins/#{@bin.id}/edit"
